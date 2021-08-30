@@ -1,9 +1,14 @@
-argument_specs:
+galaxy_info: 
+  argument_specs:
   main:
-    short_description: Setup Wordpress
-    author: sgasimov
-    license: MIT
-    min_ansible_version: 2.9
-    platforms: Ubuntu
+  role_name: preconfig 
+  description: Setup Wordpress
+  author: sgasimov
+  license: MIT
+  min_ansible_version: 2.9
+  platforms: 
+    -name: Ubuntu
+     versions:
+       - all
 dependencies:
-    - role: deploy
+  - role: deploy
