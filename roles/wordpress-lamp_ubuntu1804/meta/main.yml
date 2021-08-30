@@ -1,0 +1,9 @@
+argument_specs:
+  main:
+    short_description: Setup Wordpress
+    author: sgasimov
+    license: MIT
+    min_ansible_version: 2.9
+    platforms: Ubuntu
+dependencies:
+    - role: deploy

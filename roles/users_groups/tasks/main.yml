@@ -1,34 +1,38 @@
 ---
 # tasks file for roles/task2
+# tasks file for roles/task2
+# - hosts: all
+#   become: true
+  
+#   tasks:
 - hosts: all
   become: true
-  
-  tasks:
+  vars_files:
+    - vars/main.yml
 
-  - name: Creating DevOps group
+  tasks:
+  #Creates group Developers
+  - name: Creating Developers group
     when: ansible_facts['distribution'] == "Ubuntu"
     group:
       name: "{{ item }}"
       state: present
-    loop:
-      - devops
-      - admin
+    loop: "{{ dev_groups }}"
 
-  - name: Create 5 users - add to DevOps group - generate ssh keys
+    # Create 5 users, add to devops group and ssh keys
+  - name: Create 5 users - add to Developers group - generate ssh keys
     when: ansible_facts['distribution'] == "Ubuntu"    
     user:
       name: "{{ item }}"
-      groups: devops, admin
+      groups: "{{ dev_groups }}"
       generate_ssh_key: yes
       append: yes
       state: present
-    with_items:
-      - angel
-      - david
-      - burrito
-      - sadko
-      - clarus      
+    loop: "{{ dev_users }}"
 
+
+
+    # Allow admin group users to have sudo priviledge
   - name: "Allow admin users to sudo without a password"
     when: ansible_facts['distribution'] == "Ubuntu"    
     lineinfile:
@@ -36,4 +40,3 @@
       state: "present"
       regexp: "^%admin"
       line: "%admin ALL=(ALL) NOPASSWD: ALL"
-
