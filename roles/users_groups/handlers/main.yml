@@ -1,0 +1,33 @@
+---
+# handlers file for roles/task2
+# - hosts: all
+#   become: true
+#   vars_files:
+#     - vars/default.yml
+
+#   tasks:
+
+#   - name: Creating DevOps group
+#     when: ansible_facts['distribution'] == "Ubuntu"
+#     group:
+#       name: "{{ item.username }}"
+#       state: present
+
+
+#   - name: Create 5 users - add to DevOps group - generate ssh keys
+#     when: ansible_facts['distribution'] == "Ubuntu"    
+#     user:
+#       name: "{{ item.username }}"
+#       groups: "{{ item.groups }}"
+#       generate_ssh_key: yes
+#       append: yes
+#       state: present
+     
+
+#   - name: "Allow admin users to sudo without a password"
+#     when: ansible_facts['distribution'] == "Ubuntu"    
+#     lineinfile:
+#       dest: "/etc/sudoers" # path: in version 2.3
+#       state: "present"
+#       regexp: "^%admin"
+#       line: "%admin ALL=(ALL) NOPASSWD: ALL"

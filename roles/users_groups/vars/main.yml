@@ -1,0 +1,11 @@
+---
+# vars file for roles/task2
+dev_groups:
+  - devops
+  - admin
+dev_users:
+  - angela
+  - david
+  - sam
+  - kevin
+  - kumar
