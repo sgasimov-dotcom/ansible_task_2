@@ -49,7 +49,7 @@ This playbook will install a WordPress website on top of a LAMP environment (**L
 
 This role  will create users and groups.
 
-Run playbook: ansible-playbook playbooktask2.yaml 
+Run playbook: `ansible-playbook playbooktask2.yaml` 
 
 Variables are located in: users_groups/vars.yml variable file.
 
