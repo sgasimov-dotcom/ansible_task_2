@@ -22,7 +22,7 @@ This Role was created for my class Project. Taks requirements were the following
 --------------
 
 
-1 - Wordpress on Ubuntu 18.04 LAMP
+1 - Wordpress on Ubuntu 20.04 LAMP
 ------------------
 
 
